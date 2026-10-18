@@ -116,3 +116,36 @@ echo "Décimal : $dec<br>";
 echo "Hexadécimal : $hex<br>";
 echo "Octal : $oct<br>";
 echo "Binaire : $bin<br>";
+
+// ===== Exercice 1.5 : Chaînes de caractères =====
+echo "<h3>Exercice 1.5</h3>";
+
+$traitees = "égales à";
+$ici = 2;
+
+// 1. Guillemets doubles dans la chaîne : on utilise des guillemets simples autour
+echo '1. Ahmed a dit : "J\'ai réussi"<br>';
+
+// 2. Le backslash doit être échappé avec un autre backslash
+echo 'Voulez-vous supprimer C:\*.*?<br>';
+
+// 3. Avec des guillemets simples, \n n'est pas interprété
+echo '3. Ceci n\'affichera pas \n de nouvelle ligne<br>';
+
+// 4. Guillemets simples : les variables ne sont pas interprétées
+echo '4. Les variables ne seront pas $traitees $ici<br>';
+
+// 5. Guillemets doubles : les variables sont interprétées
+echo "5. Les variables seront $traitees $ici<br>";
+
+// --- trim() : retirer les * de la chaîne ---
+$texte = "*Bonjour les développeurs*";
+$propre = trim($texte, "*");
+echo "Avant : $texte<br>";
+echo "Après : $propre<br>";
+
+// --- Une lettre par ligne avec strlen() et for ---
+$mot = "PHP";
+for ($i = 0; $i < strlen($mot); $i++) {
+    echo $mot[$i] . "<br>";
+}
