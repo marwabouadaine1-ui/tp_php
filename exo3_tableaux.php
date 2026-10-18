@@ -4,6 +4,8 @@
 // Date : 19/10/2026
 
 require 'config.php';
+require 'includes/entete_inc.php';
+require 'includes/menu_inc.php';
 
 // ===== Exercice 3.1 : Création =====
 $notes = [
@@ -153,3 +155,5 @@ echo "<br>";
 
 /* Explication des différences :
    -> ta réponse ici */
+
+require 'includes/pied_inc.php';

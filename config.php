@@ -4,7 +4,7 @@
 // Date : 17/10/2026
 
 // Avec const
-const ETABLISSEMENT = "Nom de ton établissement";
+const ETABLISSEMENT = "FSSM";
 
 // Avec define()
 define('NOTE_MIN', 0);
