@@ -1,5 +1,5 @@
 <?php
-// Auteur : ton nom
+// Auteur : marwa
 // Objectif : Structures de contrôle et boucles
 // Date : 19/10/2026
 
