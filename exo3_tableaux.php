@@ -5,7 +5,8 @@
 
 require 'config.php';
 require 'includes/entete_inc.php';
-require 'includes/menu_inc.php';
+require 'includes/menu_inexistant.php';
+echo "La suite du script s'exécute<br>";
 
 // ===== Exercice 3.1 : Création =====
 $notes = [
@@ -157,3 +158,13 @@ echo "<br>";
    -> ta réponse ici */
 
 require 'includes/pied_inc.php';
+
+/* Expérience 1 : include vs require avec un fichier inexistant
+   -> include : un Warning s'affiche, mais la suite du script s'exécute.
+   -> require : une Fatal error s'affiche et le script s'arrête
+                (la suite n'est pas exécutée). */
+
+/* Expérience 2 : include vs include_once avec le même fichier
+   -> include : le fichier est inclus à chaque appel (le menu apparaît 2 fois).
+   -> include_once : le fichier n'est inclus qu'une seule fois
+                     (le menu apparaît une seule fois). */
