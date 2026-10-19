@@ -33,3 +33,22 @@ if (!is_numeric($note_info) || !is_numeric($note_math)
 echo "<p>Nom : " . htmlspecialchars($nom) . "</p>";
 echo "<p>Note info : " . htmlspecialchars($note_info) . "</p>";
 echo "<p>Note math : " . htmlspecialchars($note_math) . "</p>";
+
+// ===== Exercice 5.1 : Écriture dans un fichier CSV =====
+$fichier = fopen("data/notes.csv", "a");   // "a" = append (ajout à la fin)
+
+if ($fichier === false) {
+    echo "<p style='color:red'>Erreur : impossible d'ouvrir le fichier.</p>";
+    exit;
+}
+
+fputcsv($fichier, [$nom, $note_info, $note_math], ";");
+fclose($fichier);
+
+echo "<p style='color:green'>Données enregistrées dans data/notes.csv.</p>";
+
+/* Que se passerait-il avec le mode "w" au lieu de "a" ?
+   -> Avec "w" (write), le fichier est vidé (écrasé) à chaque ouverture :
+      on perd toutes les anciennes lignes et il ne reste que la dernière
+      saisie. Avec "a" (append), les nouvelles lignes sont ajoutées à la fin
+      du fichier, sans effacer les anciennes. */
