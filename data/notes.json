@@ -1,0 +1,34 @@
+[
+    {
+        "nom": "hajar",
+        "notes": {
+            "info": 19,
+            "math": 19
+        },
+        "moyenne": 19
+    },
+    {
+        "nom": "marwa",
+        "notes": {
+            "info": 18,
+            "math": 17
+        },
+        "moyenne": 17.5
+    },
+    {
+        "nom": "salma",
+        "notes": {
+            "info": 14,
+            "math": 16
+        },
+        "moyenne": 15
+    },
+    {
+        "nom": "maryam",
+        "notes": {
+            "info": 13,
+            "math": 14
+        },
+        "moyenne": 13.5
+    }
+]
