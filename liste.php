@@ -56,3 +56,38 @@ if ($nb > 0) {
 } else {
     echo "<p>Aucun apprenant enregistré.</p>";
 }
+
+// ===== Exercice 5.3 : Lecture « bas niveau » =====
+echo "<h3>Exercice 5.3 : fgets + explode</h3>";
+
+$fichier = fopen($chemin, "r");
+if ($fichier === false) {
+    echo "<p style='color:red'>Erreur : impossible d'ouvrir le fichier.</p>";
+    exit;
+}
+
+echo "<table border='1' cellpadding='5'>";
+echo "<tr><th>Nom</th><th>Info</th><th>Math</th></tr>";
+
+while (!feof($fichier)) {
+    $ligne = fgets($fichier);
+    $ligne = trim($ligne);        // enlève le \n de fin de ligne
+
+    if ($ligne === "") {
+        continue;                 // ignore la dernière ligne vide
+    }
+
+    $champs = explode(';', $ligne);
+    echo "<tr>";
+    echo "<td>" . htmlspecialchars($champs[0]) . "</td>";
+    echo "<td>" . htmlspecialchars($champs[1]) . "</td>";
+    echo "<td>" . htmlspecialchars($champs[2]) . "</td>";
+    echo "</tr>";
+}
+
+echo "</table>";
+fclose($fichier);
+
+/* Comparaison fgetcsv() vs fgets() + explode() :
+   -> fgetcsv() : ta réponse (avantages / inconvénients)
+   -> fgets() + explode() : ta réponse (avantages / inconvénients) */
